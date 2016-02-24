@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<!-- Include jQuery Mobile stylesheets -->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+		<!-- Include the jQuery library -->
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(document).bind('mobileinit',function(){
+				$.mobile.pushStateEnabled = false;
+			});
+		</script>
+		<!-- Include the jQuery Mobile library -->
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Vodafone 4G</title>
+    </head>
+    <body>
+	<div data-role="page" data-theme="b" id="connectpage">
+	  <div data-role="header" data-position="fixed">
+		<h1>Vodafone 4G</h1>
+	  </div>
+	  <div data-role="main" class="ui-content">
+		<label for="txtid">Store Id</label>
+		<input type="number" id="txtid"/>
+		<button type="button" class="ui-btn ui-btn-inline">Connect</button>
+	  </div>
+	  <div data-role="footer" data-position="fixed">
+		<h1>V 1.0</h1>
+	  </div>
+	</div> 
+	<div data-role="page" id="mainpage"></div> 
+	<div data-role="page" id="cpanelpage">
+	  <div data-role="main" class="ui-content">
+		<div class="lsidecontainer">
+			<h1>Pick your<br/>choice</h1>
+		</div>
+		<div class="rsidecontainer">
+			<div class="container">
+				<div class="col3">
+					<a href="#"class="icon-1">
+					<img src="img/Icon-6.png"/>
+					</a>
+				</div>
+				<div class="col3">
+					<a href="#" class="icon-2">
+						<img src="img/Icon-4.png"/>
+					</a>
+				</div>
+				<div class="col3">
+					<a href="#" class="icon-3">
+						<img src="img/Icon-5.png"/>
+					</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div>
+				<h1>Pick any activity and watch it progress on both handsets. See the results on this screen.</h1>
+			</div>
+		</div>
+	  </div>
+	</div> 
+	<div data-role="page" id="downloadspage">
+	  <div data-role="main" class="ui-content">
+		<div class="lsidecontainer">
+			<h1>Upload files<br/>in a jiffy!<br/>Now download<br/>large files<br/>almost<br/>instantly.</h1>
+		</div>
+		<div class="rsidecontainer">
+			<div class="container">
+				<div class="col3">
+					<a href="#"class="icon-11">
+					<img src="img/Icon-1.png"/>
+					</a>
+				</div>
+				<div class="col3">
+					<a href="#" class="icon-21">
+						<img src="img/Icon-2.png"/>
+					</a>
+				</div>
+				<div class="col3">
+					<a href="#" class="icon-31">
+						<img src="img/Icon-3.png"/>
+					</a>
+				</div>
+			</div>
+			<div class="clear:both"></div>
+			<div class="thumper">
+				<div class="ppt">
+					<hr/>
+					<h1>Select a PPT to upload</h1>
+					<div class="col2">
+						<a href="#" title="ppt1" data-op="0">
+							<img src="img/Icon-7.png"/>
+							<h2>File Size : 4mb</h2>
+						</a>
+					</div>
+					<div class="col2">
+						<a href="#" title="ppt2" data-op="1">
+							<img src="img/Icon-7.png"/>
+							<h2>File Size : 2mb</h2>
+						</a>
+					</div>
+				</div>
+				<div class="image">
+					<hr/>
+					<h1>Select an image to download</h1>
+					<div class="col2">
+						<a href="#" title="image1" data-op="2">
+							<img src="img/image1.jpg"/>
+							<h2>File Size : 9mb</h2>
+						</a>
+					</div>
+					<div class="col2">
+						<a href="#" title="image2" data-op="3">
+							<img src="img/image2.jpg"/>
+							<h2>File Size : 6mb</h2>
+						</a>
+					</div>
+				</div>
+				<div class="video">
+					<hr/>
+					<h1>Select a video to download</h1>
+					<div class="col2">
+						<a href="#" title="video1" data-op="4">
+							<img src="img/thumb2.jpg"/>
+							<h2>File Size : 3mb</h2>
+						</a>
+					</div>
+					<div class="col2">
+						<a href="#" title="video2" data-op="5">
+							<img src="img/thumb1.png"/>
+							<h2>File Size : 1mb</h2>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="clear:both"></div>
+			<a href="#cpanelpage" class="back"><img src="img/back-button.png"/></a>
+		</div>
+	  </div>
+	</div> 
+	<div data-role="page" id="youtubepage">
+	  <div class="lsidecontainer">
+			<h1>Enjoy<br/>buffer-free<br/>Streaming</h1>
+		</div>
+		<div class="rsidecontainer">
+			<div class="container">
+				<img src="img/youtubebanner.png"/>
+			</div>
+			<div class="clear:both"></div>
+			<div class="thumper">
+				<div>
+					<hr/>
+					<h1>Select a video to stream</h1>
+					<div class="col2">
+						<a href="#" title="youtube1" data-op="10">
+							<img src="img/thumb4.jpg"/>
+						</a>
+					</div>
+					<div class="col2">
+						<a href="#" title="youtube2" data-op="11">
+							<img src="img/thumb3.jpg"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="clear:both"></div>
+			<a href="#cpanelpage" class="back"><img src="img/back-button.png"/></a>
+			</div>
+		</div>
+	</div> 
+    <div data-role="page" id="apppage">
+	  <div class="lsidecontainer">
+			<h1>Download<br/>your favourite<br/>apps ultra-fast!</h1>
+		</div>
+		<div class="rsidecontainer">
+			<div class="container">		
+				<div class="featured">
+					<img src="img/appheader.png" width="100%"/>
+				</div>
+				<div>
+					<div class="appblk">
+						<div class="appicon">
+							<img src="img/insta.png"/>
+						</div>
+						<div class="appdetail">
+							<h2>Instagram</h2>
+							<p>Instagram</p>
+							<a href="#" class="ui-btn ui-btn-inline" title="app1" data-op="6">Install</a>
+						</div>
+					</div>
+					<div class="clear:both"></div>
+					<div class="appblk">
+						<div class="appicon">
+							<img src="img/temple.png"/>
+						</div>
+						<div class="appdetail">
+							<h2>Temple Run</h2>
+							<p>Imangi Studios</p>
+							<a href="#" class="ui-btn ui-btn-inline" data-op="7" title="app2">Install</a>
+						</div>
+					</div>
+					<div class="clear:both"></div>
+					<div class="appblk">
+						<div class="appicon">
+							<img src="img/amazon.png"/>
+						</div>
+						<div class="appdetail">
+							<h2>Amazon India Shopping</h2>
+							<p>Amazon Mobile LLC</p>
+							<a href="#" class="ui-btn ui-btn-inline" title="app3" data-op="8">Install</a>
+						</div>
+					</div>
+					<div class="clear:both"></div>
+					<div class="appblk">
+						<div class="appicon">
+							<img src="img/toi.png"/>
+						</div>
+						<div class="appdetail">
+							<h2>The Times of India News</h2>
+							<p>Times Internet Limited</p>
+							<a href="#" class="ui-btn ui-btn-inline" data-op="9" title="app4">Install</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear:both"></div>
+			<a href="#cpanelpage" class="back"><img src="img/back-button.png"/></a>
+		</div>
+	</div> 
+	<div data-role="page" id="summarypage">
+	  <div data-role="main" class="ui-content">
+		<div class="lsidecontainer">
+			<h1></h1>
+		</div>
+		<div class="rsidecontainer">
+			<div class="container">
+				<div class="col2">
+					<img src="img/logo-3g.png"/>
+					<div class="circle">
+						<div id="timer3G"></div>
+					</div>
+				</div>
+				<div class="col2">
+					<img src="img/logo-4g.png"/>
+					<div class="circle">
+						<div id="timer4G"></div>
+					</div>
+				</div>
+			</div>
+			<div class="clear:both"></div>
+			<a href="#" class="back summaryback"><img src="img/back-button.png"/></a>
+		</div>
+	  </div>
+	</div> 
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+		<script src="js/idleTimer.js"></script>
+		<script src="js/timer.jquery.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
