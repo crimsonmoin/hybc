@@ -138,17 +138,25 @@ $(document).on("pageshow","#summarypage",function(){
 		if (typeof (Worker) !== "undefined") {
                  //Creating Worker Object
                  abortWorker = new Worker("js/abort.js");
-                 abortWorker.postMessage(id);
-                 abortWorker.onmessage = workerResultReceiver;
+                 //Call Back Function for Success
+                 abortWorker.onmessage = workerResultReceiver1;
 				 // send message to web worker
                  //Call Back function if some error occurred
-                 abortWorker.onerror = workerErrorReceiver;    
-                 function workerResultReceiver(e) {
-                     if(e.data){
-						window.location.href="#cpanelpage";
-					 }
+                 abortWorker.onerror = workerErrorReceiver1;    
+                 function workerResultReceiver1(e) {
+                   
+					if(e.data==id){
+						$('#timer4G').timer('pause');
+						$('#timer3G').timer('pause');
+							longpollerWorker.terminate();
+							longpollerWorker=undefined;
+							abortWorker.terminate();
+							abortWorker=undefined;
+							window.location.href="#mainpage";
+					}
                  }
-                 function workerErrorReceiver(e) {
+				 abortWorker.postMessage(id);
+                 function workerErrorReceiver1(e) {
                      console.log("there was a problem with the WebWorker within " + e);
                  }
               }
@@ -187,11 +195,11 @@ $(document).on("pageshow","#summarypage",function(){
               }
 	};
 	function clearTimers(){
-		/*if(navigator.connection.type==0||navigator.connection.type=='none')
+		if(navigator.connection.type==0||navigator.connection.type=='none')
 		{
 			alert('No internet connection detected');
 		}
-		else*/
+		else
 		{
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
