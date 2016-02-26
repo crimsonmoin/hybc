@@ -1,5 +1,5 @@
 var uri="http://api2.valleyretail.in/rest/api.php?request=";
-var clearWorker;
+var abortWorker;
 var longpollerWorker;
 var operation="";
 var id=0;
@@ -118,16 +118,44 @@ $(document).on("pageshow","#summarypage",function(){
 	$("#timer3G").timer('remove');
 	$("#timer4G").timer('remove');
 	$("#summarypage h1").html('Test Performed<br/>'+MasterData[op].type+" "+MasterData[op].op+"<br/>"+"File Size : "+MasterData[op].size);
-	$(".back").hide();
+	
 	if(typeof(longpollerWorker)!="undefined"){
 		longpollerWorker.terminate();
 		longpollerWorker=undefined;
 	}
+	if(typeof(abortWorker)!="undefined"){
+		abortWorker.terminate();
+		abortWorker=undefined;
+	}
 	var myVar;
 	$(".summaryback").on("click",function(e){
+	//back button aborter
 	  e.preventDefault();
 	  clearTimeout(myVar);
-	  window.location.href="#cpanelpage";
+	  var res=confirm('Do you want to abort the operation ?');
+	  // operation abortion code included here
+	  if(res){
+		if (typeof (Worker) !== "undefined") {
+                 //Creating Worker Object
+                 abortWorker = new Worker("js/abort.js");
+                 abortWorker.postMessage(id);
+                 abortWorker.onmessage = workerResultReceiver;
+				 // send message to web worker
+                 //Call Back function if some error occurred
+                 abortWorker.onerror = workerErrorReceiver;    
+                 function workerResultReceiver(e) {
+                     if(e.data){
+						window.location.href="#cpanelpage";
+					 }
+                 }
+                 function workerErrorReceiver(e) {
+                     console.log("there was a problem with the WebWorker within " + e);
+                 }
+              }
+              else {
+                  alert("Sorry!!! could not connect");
+              }
+		}
 	});
 	function longPoller(){
 		if (typeof (Worker) !== "undefined") {
@@ -142,13 +170,9 @@ $(document).on("pageshow","#summarypage",function(){
                      var data=JSON.parse(e.data);
 						if(data.device2==1){$('#timer4G').timer('pause');}
 						if(data.device1==1){$('#timer3G').timer('pause');}
-						/*if(data.device1==1||data.device2==1){
-							$(".back").show();
-						}*/
 						if(data.device1==1&&data.device2==1){							
 							longpollerWorker.terminate();
 							longpollerWorker=undefined;
-							$(".back").show();
 							myVar = setTimeout(function () {
 							window.location.href="#mainpage";}, 25000);
 						}
@@ -163,11 +187,12 @@ $(document).on("pageshow","#summarypage",function(){
               }
 	};
 	function clearTimers(){
-		if(navigator.connection.type==0||navigator.connection.type=='none')
+		/*if(navigator.connection.type==0||navigator.connection.type=='none')
 		{
 			alert('No internet connection detected');
 		}
-		else{
+		else*/
+		{
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
