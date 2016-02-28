@@ -144,7 +144,6 @@ $(document).on("pageshow","#summarypage",function(){
                  //Call Back function if some error occurred
                  abortWorker.onerror = workerErrorReceiver1;    
                  function workerResultReceiver1(e) {
-                   
 					if(e.data==id){
 						$('#timer4G').timer('pause');
 						$('#timer3G').timer('pause');
