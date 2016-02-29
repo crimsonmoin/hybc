@@ -123,7 +123,8 @@ $(document).on("pageshow","#summarypage",function(){
 	$("#timer3G").prev('span').parent().css("background-color","transparent");
 	$('#timer4G').css("color","white");
 	$("#timer4G").prev('span').parent().css("background-color","transparent");
-	
+	var dev1,dev2;
+	dev1=dev2=0;
 	if(typeof(longpollerWorker)!="undefined"){
 		longpollerWorker.terminate();
 		longpollerWorker=undefined;
@@ -137,7 +138,14 @@ $(document).on("pageshow","#summarypage",function(){
 	//back button aborter
 	  e.preventDefault();
 	  clearTimeout(myVar);
-	  var res=confirm('Do you want to abort the operation ?');
+	  
+	  var res=false;
+	  if(dev1==0||dev2==0){
+	  res=confirm('Do you want to abort the operation ?');
+	  }
+	  else{
+		  window.location.href="#mainpage";
+	  }
 	  // operation abortion code included here
 	  if(res){
 		if (typeof (Worker) !== "undefined") {
@@ -153,10 +161,14 @@ $(document).on("pageshow","#summarypage",function(){
 					if(e.data==id){
 						$('#timer4G').timer('pause');
 						$('#timer3G').timer('pause');
-							longpollerWorker.terminate();
-							longpollerWorker=undefined;
-							abortWorker.terminate();
-							abortWorker=undefined;
+							if(typeof(longpollerWorker)!="undefined"){
+								longpollerWorker.terminate();
+								longpollerWorker=undefined;
+							}
+							if(typeof(abortWorker)!="undefined"){
+								abortWorker.terminate();
+								abortWorker=undefined;
+							}
 							window.location.href="#mainpage";
 					}
                  }
@@ -182,12 +194,14 @@ $(document).on("pageshow","#summarypage",function(){
                  function workerResultReceiver(e) {
                      var data=JSON.parse(e.data);
 						if(data.device2==1){
-							$('#timer4G').timer('pause');
+							dev2=1;
+							$('#timer4G').timer('pause'); 
 							$("#timer4G").prev('span').show(500);
 							$('#timer4G').css("color","#e90000");
 							$("#timer4G").prev('span').parent().css("background-color","white");
 							}
 						if(data.device1==1){
+							dev1=1;
 							$('#timer3G').timer('pause');
 							$("#timer3G").prev('span').show(500);
 							$('#timer3G').css("color","#e90000");
