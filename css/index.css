@@ -51,11 +51,7 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background:white url('img/bg1.png');
-	 -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-    font-size:12px;
+    
     height:100%;
     margin:0px;
     padding:0px;
@@ -73,10 +69,6 @@ a{text-decoration:none;}
 }
 #cpanelpage,#downloadspage,#summarypage,#youtubepage,#apppage{
 	background: url('../img/bg1.png');
-	 -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 h1 {
     font-size:40px;
@@ -216,8 +208,8 @@ h1 {
 }
 #timer3G,#timer4G{
 	font-size:200px;
-	font-family:'timer';
-	color:rgb(230,30,37);
+	font-family:'vodaofoneregular';
+	color:white;
 	margin-top:120px;
 }
 .clear{
@@ -278,7 +270,7 @@ h1 {
 .circle{
 	text-align:center;
 	border-radius:50%;
-	border:5px solid rgb(230,30,37);
+	border:2px solid white;
 	width:500px;
 	height:500px;
 }
@@ -369,12 +361,12 @@ h1 {
 	.back{
 	position:fixed;
 	bottom:10px;
-	left:15%;
+	right:10%;
 	z-index:9999;
 	font-size:30px;
 	}
 	.back>img{
-		max-width:30%;
+		max-width:50%;
 	}
 	.appdetail h2{
 	font-size: 25px;
@@ -404,12 +396,21 @@ h1 {
 		width:80%;
 	}
 	#timer3G,#timer4G{
-	font-size:90px;
-	margin-top:65px;
+	font-size:65px;
+	margin-top:90px;
 	}
 	.circle{
 	width:250px;
 	height:250px;
+	position:relative;
+	}
+	.circle span{
+	margin-top: 38px;
+    position: absolute;
+    margin-left: 38px;
+    font-size: 50px;
+    color: #515151;
+    font-family: 'vodafonebold';
 	}
 	#summarypage .col2 img{
 		width:50%;

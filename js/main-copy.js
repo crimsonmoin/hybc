@@ -118,11 +118,6 @@ $(document).on("pageshow","#summarypage",function(){
 	$("#timer3G").timer('remove');
 	$("#timer4G").timer('remove');
 	$("#summarypage h1").html('Test Performed<br/>'+MasterData[op].type+" "+MasterData[op].op+"<br/>"+"File Size : "+MasterData[op].size);
-	$(".circle span").hide();
-	$('#timer3G').css("color","white");
-	$("#timer3G").prev('span').parent().css("background-color","transparent");
-	$('#timer4G').css("color","white");
-	$("#timer4G").prev('span').parent().css("background-color","transparent");
 	
 	if(typeof(longpollerWorker)!="undefined"){
 		longpollerWorker.terminate();
@@ -149,7 +144,6 @@ $(document).on("pageshow","#summarypage",function(){
                  //Call Back function if some error occurred
                  abortWorker.onerror = workerErrorReceiver1;    
                  function workerResultReceiver1(e) {
-                   
 					if(e.data==id){
 						$('#timer4G').timer('pause');
 						$('#timer3G').timer('pause');
@@ -181,18 +175,8 @@ $(document).on("pageshow","#summarypage",function(){
                  longpollerWorker.onerror = workerErrorReceiver;    
                  function workerResultReceiver(e) {
                      var data=JSON.parse(e.data);
-						if(data.device2==1){
-							$('#timer4G').timer('pause');
-							$("#timer4G").prev('span').show(500);
-							$('#timer4G').css("color","#e90000");
-							$("#timer4G").prev('span').parent().css("background-color","white");
-							}
-						if(data.device1==1){
-							$('#timer3G').timer('pause');
-							$("#timer3G").prev('span').show(500);
-							$('#timer3G').css("color","#e90000");
-							$("#timer3G").prev('span').parent().css("background-color","white");
-						}
+						if(data.device2==1){$('#timer4G').timer('pause');}
+						if(data.device1==1){$('#timer3G').timer('pause');}
 						if(data.device1==1&&data.device2==1){							
 							longpollerWorker.terminate();
 							longpollerWorker=undefined;
@@ -210,11 +194,11 @@ $(document).on("pageshow","#summarypage",function(){
               }
 	};
 	function clearTimers(){
-		/*if(navigator.connection.type==0||navigator.connection.type=='none')
+		if(navigator.connection.type==0||navigator.connection.type=='none')
 		{
 			alert('No internet connection detected');
 		}
-		else*/
+		else
 		{
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
