@@ -51,7 +51,10 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background:white url('img/bg1.png');
-    
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     height:100%;
     margin:0px;
     padding:0px;
@@ -69,6 +72,10 @@ a{text-decoration:none;}
 }
 #cpanelpage,#downloadspage,#summarypage,#youtubepage,#apppage{
 	background: url('../img/bg1.png');
+	 -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 h1 {
     font-size:40px;
@@ -218,11 +225,16 @@ h1 {
 .back{
 	position:fixed;
 	bottom:20px;
-	right:10%;
+	right:20px;
 	z-index:9999;
 }
 .back>img{
 	max-width:35%;
+}
+.btmsg{
+	color:white;
+	font-size:30px;
+	position:relative;
 }
 .disabler{
 	opacity:0.5;
@@ -360,7 +372,7 @@ h1 {
 	.back{
 	position:fixed;
 	bottom:10px;
-	right:10%;
+	right:20px;
 	z-index:9999;
 	font-size:30px;
 	}
