@@ -218,12 +218,11 @@ h1 {
 .back{
 	position:fixed;
 	bottom:20px;
-	left:17%;
+	right:10%;
 	z-index:9999;
-	font-size:80px;
 }
 .back>img{
-	max-width:50%;
+	max-width:35%;
 }
 .disabler{
 	opacity:0.5;
@@ -407,7 +406,7 @@ h1 {
 	.circle span{
 	margin-top: 38px;
     position: absolute;
-    margin-left: 38px;
+    margin-left: 35px;
     font-size: 50px;
     color: #515151;
     font-family: 'vodafonebold';
