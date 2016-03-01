@@ -129,6 +129,28 @@ h1 {
   -o-background-size: cover;
   background-size: cover;
 }
+.thumper{margin-top: 75px;}
+.yt1{
+	background: white url('../img/thumb4.jpg') no-repeat; 
+	margin-right:45px;
+}
+.yt2{
+	background: white url('../img/thumb3.jpg') no-repeat; 
+}
+.overlay{
+	background:rgba(00,00,00,0.3);
+	    border-radius: 50%;
+		width:100%;
+		height:100%;
+		position:relative;
+		text-align:center;
+}
+.overlay>img{
+	position: absolute;
+    bottom: 10px;
+    width: 50px;
+    left: 75px;
+}
 .lsidecontainer{
 	float:left;
 	width:40%;
@@ -200,6 +222,10 @@ h1 {
     margin: 20px;
 	color:black;
 	text-align:center;
+	 -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .col3 img{
@@ -250,7 +276,6 @@ h1 {
 .thumper{
 	float:left;
 	width:100%;
-	border-top:2px solid #eee;
 }
 .thumper a{
 	text-decoration:none;
@@ -407,7 +432,9 @@ h1 {
 		font-size: 12px;
 	}
 	.thumper h2{font-size:20px;}
-	.thumper{border-top:1px solid #eee;}
+	.yt1 {
+    margin-right: 45px;
+	}
 	.thumper .col2 img{
 		width:70%;
 		padding:0 10%;
@@ -426,6 +453,11 @@ h1 {
 	height:250px;
 	position:relative;
 	}
+	.thumper>.circle{
+		height:200px;
+		width:200px;
+		margin: 75px 45px 0;
+	}
 	.circle span{
 	margin-top: 38px;
     position: absolute;
@@ -433,6 +465,9 @@ h1 {
     font-size: 50px;
     color: #515151;
     font-family: 'vodafonebold';
+	}
+	.thumper .col2 .overlay>img{
+    width: 50px;
 	}
 	#summarypage .col2 img{
 		width: 75px;
