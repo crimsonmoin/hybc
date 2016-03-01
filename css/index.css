@@ -388,8 +388,8 @@ h1 {
 	font-size: 15px;
 	}
 	.appicon>img{width:80px;height:80px;}
-	.featured>img{height:70px;}
-	.appblk{margin:10px;}
+	.featured>img{height:60px;}
+	.appblk{    margin: 5px 10px 5px 15px;}
 	.appdetail{padding-top:5px;}
 	.appdetail a {
 		position: absolute;
