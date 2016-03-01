@@ -298,7 +298,7 @@ h1 {
 }
 .appicon{
 	float:left;
-	width:25%;
+	width:15%;
 }
 .appdetail{
 	float:left;
@@ -349,6 +349,9 @@ h1 {
 	#downloadspage .lsidecontainer h1,#summarypage .lsidecontainer h1,#youtubepage .lsidecontainer h1,#apppage .lsidecontainer h1,#cpanelpage h1,#cpanelpage .lsidecontainer h1{
 	font-size:35px;
 	}
+	#cpanelpage h1{
+		font-size:32px;
+	}
 	#youtubepage .rsidecontainer>.container{
 		margin-top:5%;
 	}
@@ -387,7 +390,7 @@ h1 {
 	.appdetail p{
 	font-size: 15px;
 	}
-	.appicon>img{width:80px;height:80px;}
+	.appicon>img{width:80px;height:75px;}
 	.featured>img{height:60px;}
 	.appblk{    margin: 5px 10px 5px 15px;}
 	.appdetail{padding-top:5px;}
