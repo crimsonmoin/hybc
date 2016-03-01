@@ -232,11 +232,17 @@ h1 {
 	max-width:35%;
 }
 .btmsg{
-	color:white;
-	font-size:25px;
-	line-height: 30px;    
-	margin-top: 30px;
-	position:relative;
+	color: white;
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 30px;
+    position: fixed;
+    bottom: 35px;
+}
+.othernetwork{
+	color: white;
+    font-size: 35px;
+    margin-top: 15px;
 }
 .disabler{
 	opacity:0.5;
@@ -429,10 +435,12 @@ h1 {
     font-family: 'vodafonebold';
 	}
 	#summarypage .col2 img{
-		width:50%;
+		width: 75px;
 	}
-	#summarypage .rsidecontainer>.container .col2{
-		margin-top: 30px;
+	#summarypage .rsidecontainer>.container .col2 {
+	margin: 100px 50px;
+    width: 250px;
+    text-align: center;
 	}
 	#summarypage .rsidecontainer>.container{
 		margin-top:0px;
