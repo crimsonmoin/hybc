@@ -298,7 +298,7 @@ h1 {
 }
 .appicon{
 	float:left;
-	width:15%;
+	width:20%;
 }
 .appdetail{
 	float:left;
@@ -397,7 +397,7 @@ h1 {
 	.appdetail a {
 		position: absolute;
 		right: 5px;
-		bottom: 10px;
+		bottom: 5px;
 		font-size: 12px;
 	}
 	.thumper h2{font-size:20px;}
