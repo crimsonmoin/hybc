@@ -40,19 +40,8 @@ $(document).on("pagecreate","#mainpage",function(){
     window.location.href="#cpanelpage";
   });    
 });
-$(document).on("pagecreate","#cpanelpage",function(){			  
-  $(".icon-1").on("click",function(e){
-	  e.preventDefault();
-	  window.location.href="#youtubepage";
-  });    
-  $(".icon-2").on("click",function(e){
-	  e.preventDefault();
-	  window.location.href="#downloadspage";
-  });    
-  $(".icon-3").on("click",function(e){
-	  e.preventDefault();
-	  window.location.href="#apppage";
-  });    
+$(document).on("pageshow","#cpanelpage",function(){	
+$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
 
 $(document).on("pagecreate","#downloadspage",function(){
@@ -144,7 +133,7 @@ $(document).on("pageshow","#summarypage",function(){
 	  res=confirm('Do you want to abort the operation ?');
 	  }
 	  else{
-		  window.location.href="#mainpage";
+		  window.location.href="#cpanelpage";
 	  }
 	  // operation abortion code included here
 	  if(res){
@@ -169,7 +158,7 @@ $(document).on("pageshow","#summarypage",function(){
 								abortWorker.terminate();
 								abortWorker=undefined;
 							}
-							window.location.href="#mainpage";
+							window.location.href="#cpanelpage";
 					}
                  }
 				 abortWorker.postMessage(id);
