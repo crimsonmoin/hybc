@@ -35,6 +35,12 @@ $(document).on("pagecreate","#connectpage",function(){
 		}
   });    
 });
+$(document).on("pageshow","#screensaverpage",function(){
+	var aud = document.getElementById("myAudio");
+	aud.onended = function() {
+    aud.play();
+	};  
+});
 $(document).on("pagecreate","#mainpage",function(){
   $("#mainpage").on("click",function(){
     window.location.href="#cpanelpage";
