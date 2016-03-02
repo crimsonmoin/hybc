@@ -470,7 +470,9 @@ h1 {
 	font-size:35px;
 	}
 	#cpanelpage h1{
-		font-size:32px;
+		font-size: 32px;
+    position: fixed;
+    bottom: 15px;
 	}
 	#youtubepage .rsidecontainer>.container{
 		margin-top:5%;
