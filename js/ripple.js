@@ -42,15 +42,21 @@ $(function(){
 				y = e.pageY - $(this).offset().top - ink.height()/2;
 				ink.css({top: y+'px', left: x+'px'}).addClass("animate");
 				 $(this).one("webkitAnimationEnd mozAnimationEnd oanimationend animationend", function() {
-						if($(this).find('img').attr('title')=="play"){
-							window.location.href="#apppage";
+						switch($(this).find('img').attr('title')){
+							case "play":window.location.href="#apppage";
+							break;
+							case "upload":window.location.href="#uploadpage";
+							break;
+							case "youtube":window.location.href="#youtubepage";
+							break;
+							case "ppt":window.location.href="#downloadspage";
+							break;
+							case "img":window.location.href="#downloadspage";
+							break;
+							case "video":window.location.href="#downloadspage";
+							break;
 						}
-						else if($(this).find('img').attr('title')=="upload"){
-							window.location.href="#uploadpage";
-						}
-						else if($(this).find('img').attr('title')=="youtube"){
-							window.location.href="#youtubepage";
-						}
+				
                     });
 
 				});
