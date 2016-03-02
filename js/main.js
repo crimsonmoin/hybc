@@ -36,10 +36,11 @@ $(document).on("pagecreate","#connectpage",function(){
   });    
 });
 $(document).on("pageshow","#screensaverpage",function(){
-	var aud = document.getElementById("myAudio");
-	aud.onended = function() {
-    aud.play();
-	};  
+	var video = document.getElementById("myAudio");
+	video.loop = false; 
+    video.addEventListener('ended', function() { 
+    video.currentTime=0.1; video.play(); }, false);
+    video.play();
 });
 $(document).on("pagecreate","#mainpage",function(){
   $("#mainpage").on("click",function(){
