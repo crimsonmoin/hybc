@@ -47,9 +47,9 @@ $(document).on("pageshow","#cpanelpage",function(){
 		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
 $(document).on("pageshow","#uploadpage",function(){	
-		$(".ppt").attr('src','img/ppth-icon.png');
-		$(".video").attr('src','img/videoh-icon.png');
-		$(".img").attr('src','img/imgh-icon.png');
+		$(".ppt").attr('src','img/ppt-icon.png');
+		$(".video").attr('src','img/video-icon.png');
+		$(".img").attr('src','img/img-icon.png');
 		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
 $(document).on("pagecreate","#downloadspage",function(){
