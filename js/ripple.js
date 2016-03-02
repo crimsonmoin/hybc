@@ -32,7 +32,15 @@ $(function(){
 				y = e.pageY - $(this).offset().top - ink.height()/2;
 				ink.css({top: y+'px', left: x+'px'}).addClass("animate");
 				 $(this).one("webkitAnimationEnd mozAnimationEnd oanimationend animationend", function() {
-					//redirect
+						if($(this).find('img').attr('title')=="play"){
+							window.location.href="#apppage";
+						}
+						else if($(this).find('img').attr('title')=="upload"){
+							window.location.href="#downloadspage";
+						}
+						else if($(this).find('img').attr('title')=="youtube"){
+							window.location.href="#youtubepage";
+						}
                     });
 
 				});
