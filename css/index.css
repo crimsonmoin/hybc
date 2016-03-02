@@ -367,12 +367,14 @@ h1 {
 #connectpage .ui-content{padding:1em;}
 #cpanelpage .col3{
 	width:200px;
-	margin:20px;
+	margin:15px;
 	float:left;
 	text-align:center;
 }
 .col3 h3{
-	color:white;
+	color: white;
+    font-size: 26px;
+    font-weight: 300;
 }
 .ripplelink{
   display:block;
