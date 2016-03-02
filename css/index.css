@@ -50,11 +50,6 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background:white url('../img/bg1.png');
-    -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
     height:100%;
     margin:0px;
     padding:0px;
@@ -579,5 +574,8 @@ h1 {
 	#summarypage .lsidecontainer h1{
 		margin-left:10%;
 		margin-top: 90%;
+	}
+	#cpanelpage .lsidecontainer h1{
+		margin-top:100%;
 	}
 }
