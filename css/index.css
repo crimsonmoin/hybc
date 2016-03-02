@@ -366,10 +366,10 @@ h1 {
 .ui-content{padding:0;}
 #connectpage .ui-content{padding:1em;}
 #cpanelpage .col3{
-	width:200px;
-	margin:15px;
-	float:left;
-	text-align:center;
+	width: 175px;
+    margin: 10px;
+    float: left;
+    text-align: center;
 }
 .col3 h3{
 	color: white;
@@ -439,16 +439,17 @@ h1 {
 	position:relative;
 }
 .inner-two.container {
-    width: 200px;
-    height: 200px;
+  height: 175px;
     margin: 1%;
-	position:relative;
+    position: relative;
+	width: 175px;
 }
 .inner-two>img{
-	height: 75px;
+	    height: 50px;
+    width: 75px;
     position: absolute;
-    top: 45px;
-    left: 35px;
+    top: 28px;
+    left: 15px;
 }
 .ripplelink{
 	 border: 2px solid #ffffff;
