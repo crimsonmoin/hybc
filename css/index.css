@@ -186,7 +186,7 @@ h1 {
 	color:white;
 	font-family: 'vodafonebold';
 	text-transform: capitalize;
-	margin-top:100%;
+	margin-top:95%;
 	margin-left:10%;
 	text-align:left;
 	font-size:90px;
@@ -410,11 +410,11 @@ h1 {
 }
 
 .animate {
-	-webkit-animation:ripple 0.5s linear;
-   -moz-animation:ripple 0.5s linear;
-    -ms-animation:ripple 0.5s linear;
-     -o-animation:ripple 0.5s linear;
-        animation:ripple 0.5s linear;
+	-webkit-animation:ripple 0.3s linear;
+   -moz-animation:ripple 0.3s linear;
+    -ms-animation:ripple 0.3s linear;
+     -o-animation:ripple 0.3s linear;
+        animation:ripple 0.3s linear;
 }
 
 @-webkit-keyframes ripple {

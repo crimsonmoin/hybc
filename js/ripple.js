@@ -14,6 +14,8 @@ $(function(){
 				}
 				$(".play").attr('src','img/play-icon.png');
 				$(".upload").attr('src','img/upload-icon.png');
+				$(".youtube").attr('src','img/youtube-icon.png');
+				
 				$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);
 				
 				$(this).animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300).parent().animate({borderColor:'#ffffff'},300).animate({borderColor:'transparent'},300);
@@ -22,6 +24,9 @@ $(function(){
 				}
 				else if($(this).find('img').attr('title')=="upload"){
 					$(this).find('img').attr('src','img/uploadh-icon.png');
+				}
+				else if($(this).find('img').attr('title')=="youtube"){
+					$(this).find('img').attr('src','img/youtubeh-icon.png');
 				}
 				x = e.pageX - $(this).offset().left - ink.width()/2;
 				y = e.pageY - $(this).offset().top - ink.height()/2;
