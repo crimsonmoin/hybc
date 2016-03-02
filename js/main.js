@@ -41,12 +41,17 @@ $(document).on("pagecreate","#mainpage",function(){
   });    
 });
 $(document).on("pageshow","#cpanelpage",function(){	
-$(".play").attr('src','img/play-icon.png');
-				$(".upload").attr('src','img/upload-icon.png');
-				$(".youtube").attr('src','img/youtube-icon.png');
-$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
+		$(".play").attr('src','img/play-icon.png');
+		$(".upload").attr('src','img/upload-icon.png');
+		$(".youtube").attr('src','img/youtube-icon.png');
+		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
-
+$(document).on("pageshow","#uploadpage",function(){	
+		$(".ppt").attr('src','img/ppth-icon.png');
+		$(".video").attr('src','img/videoh-icon.png');
+		$(".img").attr('src','img/imgh-icon.png');
+		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
+});
 $(document).on("pagecreate","#downloadspage",function(){
 	$(".image").hide();
 	$(".video").hide();
