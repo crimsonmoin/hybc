@@ -36,7 +36,7 @@ $(function(){
 							window.location.href="#apppage";
 						}
 						else if($(this).find('img').attr('title')=="upload"){
-							window.location.href="#downloadspage";
+							window.location.href="#uploadpage";
 						}
 						else if($(this).find('img').attr('title')=="youtube"){
 							window.location.href="#youtubepage";

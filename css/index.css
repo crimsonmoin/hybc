@@ -70,7 +70,7 @@ a{text-decoration:none;}
 	font-family: 'vodaofoneregular';
 	font-size:50px;
 }
-#cpanelpage,#downloadspage,#summarypage,#youtubepage,#apppage{
+#cpanelpage,#uploadpage,#downloadspage,#summarypage,#youtubepage,#apppage{
 	background: url('../img/bg1.png');
 	 -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -170,19 +170,19 @@ h1 {
 	background:white;'
 	height:100%;
 }
-#cpanelpage .rsidecontainer>.container{
+#cpanelpage .rsidecontainer>.container,#uploadpage .rsidecontainer>.container{
 	width:100%;
 	height:50%;
 	margin-top:15%;
 }
-#cpanelpage h1{
+#cpanelpage h1,#uploadpage h1{
 	text-transform: none;
 	text-align:left;
 	color:white;
 	font-family: 'vodaofoneregular';
 	font-size:90px;
 }
-#cpanelpage .lsidecontainer h1{
+#cpanelpage .lsidecontainer h1,#uploadpage .lsidecontainer h1{
 	color:white;
 	font-family: 'vodafonebold';
 	text-transform: capitalize;
@@ -365,7 +365,7 @@ h1 {
 }
 .ui-content{padding:0;}
 #connectpage .ui-content{padding:1em;}
-#cpanelpage .col3{
+#cpanelpage .col3,#uploadpage .col3{
 	width: 175px;
     margin: 10px;
     float: left;
@@ -444,12 +444,12 @@ h1 {
     position: relative;
 	width: 175px;
 }
-.inner-two>img{
-	    height: 50px;
-    width: 75px;
+.inner-two>img {
+    height: 75px;
+    width: 100px;
     position: absolute;
-    top: 28px;
-    left: 15px;
+    top: 14px;
+    left: 0px;
 }
 .ripplelink{
 	 border: 2px solid #ffffff;
@@ -466,13 +466,11 @@ h1 {
 	width: 25%;
     margin: 15px;
 	}
-	#downloadspage .lsidecontainer h1,#summarypage .lsidecontainer h1,#youtubepage .lsidecontainer h1,#apppage .lsidecontainer h1,#cpanelpage h1,#cpanelpage .lsidecontainer h1{
+	#uploadpage .lsidecontainer h1,#downloadspage .lsidecontainer h1,#summarypage .lsidecontainer h1,#youtubepage .lsidecontainer h1,#apppage .lsidecontainer h1,#cpanelpage h1,#cpanelpage .lsidecontainer h1{
 	font-size:35px;
 	}
-	#cpanelpage h1{
-		font-size: 30px;
-    position: fixed;
-    bottom: 25px;
+	#cpanelpage h1,#uploadpage h1{
+	font-size: 30px;
 	}
 	#youtubepage .rsidecontainer>.container{
 		margin-top:5%;
@@ -556,6 +554,13 @@ h1 {
     font-size: 50px;
     color: #515151;
     font-family: 'vodafonebold';
+	}
+	#uploadpage .inner-two>img {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
 	}
 	.thumper .col2 .overlay>img{
     width: 50px;
