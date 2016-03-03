@@ -37,7 +37,8 @@
 	<div data-role="page" id="mainpage"></div> 
 	<div data-role="page" id="screensaverpage">
 		<a href="#mainpage">
-			<video src="img/video.mp4" id="myAudio">
+			<video id="myAudio" preload="auto" data-setup="{}">
+				<source src="img/video.mp4">
 			</video>
 		</a>
 	</div>
@@ -81,7 +82,7 @@
 			</div>
 			<div class="clear"></div>
 			<div>
-				<h1 style="position:fixed;bottom:35px;">Pick any activity and watch it progress on both handsets. See the results on this screen.</h1>
+				<h1 style="position:fixed;left:15px;bottom:45px;">Pick any activity and watch it progress on both handsets. See the results on this screen.</h1>
 			</div>
 		</div>
 	  </div>
@@ -327,6 +328,7 @@
 		<script src="js/idleTimer.js"></script>
 		<script src="js/timer.jquery.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="http://vjs.zencdn.net/5.7.1/video.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/ripple.js"></script>
     </body>
