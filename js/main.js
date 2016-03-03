@@ -41,7 +41,7 @@ $(document).on("pageshow","#screensaverpage",function(){
     video.loop = false; 
     video.addEventListener('ended', function() { video.currentTime=0.1; video.play(); }, false);
     video.play();
-	$("video").on("tap",function(){
+	$(".tapper").on("tap",function(){
 		window.location.href="#mainpage"; 
 	});
 });
