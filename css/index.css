@@ -58,7 +58,7 @@ body {
 }
 a{text-decoration:none;}
 video { 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
@@ -66,6 +66,16 @@ video {
     width: auto;
     height: auto;
     z-index: 2;
+}
+.tapper{
+	position:absolute;
+	top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 20;
 }
 #connectpage{
 	font-family: 'vodaofoneregular';
@@ -77,6 +87,7 @@ video {
 }
 #cpanelpage,#uploadpage,#downloadspage,#summarypage,#youtubepage,#apppage{
 	background: url('../img/bg1.png');
+	position:relative;
 	 -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
