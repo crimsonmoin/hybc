@@ -35,7 +35,7 @@ $(document).on("pagecreate","#connectpage",function(){
 		}
   });    
 });
-$(document).on("pagecreate","#screensaverpage",function(){
+$(document).on("pageshow","#screensaverpage",function(){
 	var video = document.getElementById("myAudio"); 
     //this did the trick
     video.loop = false; 
