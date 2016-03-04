@@ -153,6 +153,20 @@ h1 {
 .yt2{
 	background: white url('../img/thumb3.jpg') no-repeat; 
 }
+.img1{
+	background: white url('../img/image1.jpg') no-repeat;
+	margin-right:45px;	
+}
+.img2{
+	background: white url('../img/image2.jpg') no-repeat; 
+}
+.vid1{
+	background: white url('../img/thumb1.jpg') no-repeat; 
+	margin-right:45px;
+}
+.vid2{
+	background: white url('../img/thumb2.jpg') no-repeat; 
+}
 .overlay{
 	background:rgba(00,00,00,0.3);
 	    border-radius: 50%;
@@ -213,7 +227,7 @@ h1 {
 	font-size:90px;
 	font-family: 'vodafonebold';
 	text-transform: none;
-	margin-top:70%;
+	margin-top:100%;
 	margin-left:5%;
 }
 #summarypage .lsidecontainer h1,#youtubepage .lsidecontainer h1,#apppage .lsidecontainer h1{
@@ -536,7 +550,9 @@ h1 {
 		bottom: 5px;
 		font-size: 12px;
 	}
-	.thumper h2{font-size:20px;}
+	.thumper h2{font-size: 25px;
+    color: white;
+    font-weight: 300;}
 	.yt1 {
     margin-right: 45px;
 	}
@@ -580,6 +596,10 @@ h1 {
 	}
 	.thumper .col2 .overlay>img{
     width: 50px;
+	}
+	.thumper .col2.ppt1 .overlay>img,.thumper .col2.ppt2 .overlay>img {
+    width: 175px;
+	left: 12px;
 	}
 	#summarypage .col2 img{
 		width: 75px;

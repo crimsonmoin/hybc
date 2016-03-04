@@ -1,4 +1,5 @@
-$(function(){
+//$(function(){
+				
 				var ink, d, x, y;
 				$(".ripplelink").click(function(e){
 				if($(this).find(".ink").length === 0){
@@ -49,15 +50,15 @@ $(function(){
 							break;
 							case "youtube":window.location.href="#youtubepage";
 							break;
-							case "ppt":window.location.href="#downloadspage";
+							case "ppt":ty=0;window.location.href="#downloadspage";
 							break;
-							case "img":window.location.href="#downloadspage";
+							case "img":ty=1;window.location.href="#downloadspage";
 							break;
-							case "video":window.location.href="#downloadspage";
+							case "video":ty=2;window.location.href="#downloadspage";
 							break;
 						}
 				
                     });
 
 				});
-});
+//});
