@@ -94,9 +94,9 @@ $(document).on("pageshow","#downloadspage",function(){
 	switcher();
 	$('.btmcontainer>.col3 a').click(function(e){
 		e.preventDefault();
-		$(".pptxx").attr('src','img/ppt-icon.png').parent().animate({borderColor:'transparent'},100).parent().animate({backgroundColor:'transparent'}, 100);;
-		$(".videox").attr('src','img/video-icon.png').parent().animate({borderColor:'transparent'},100).parent().animate({backgroundColor:'transparent'}, 100);;
-		$(".imgx").attr('src','img/img-icon.png').parent().animate({borderColor:'transparent'},100).parent().animate({backgroundColor:'transparent'}, 100);;
+		$(".pptxx").attr('src','img/ppt-icon.png');
+		$(".videox").attr('src','img/video-icon.png');
+		$(".imgx").attr('src','img/img-icon.png');
 		$('.btmcontainer>.col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
 		ty=parseInt($(this).attr('title'));
 		$(this).children().animate({borderColor:'#ffffff'},300).children().animate({backgroundColor:'#ffffff'}, 200);
