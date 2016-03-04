@@ -36,14 +36,14 @@ $(document).on("pagecreate","#connectpage",function(){
   });    
 });
 $(document).on("pageshow","#screensaverpage",function(){
-	var video = document.getElementById("myAudio"); 
+	//var video = document.getElementById("myAudio"); 
     //this did the trick
-    video.loop = false; 
+    /*video.loop = false; 
     video.addEventListener('ended', function() { video.currentTime=0.1; video.play(); }, false);
     video.play();
 	$(".tapper").on("tap",function(){
 		window.location.href="#mainpage"; 
-	});
+	});*/
 });
 $(document).on("pagecreate","#mainpage",function(){
   $("#mainpage").on("click",function(){
