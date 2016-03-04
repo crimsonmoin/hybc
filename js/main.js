@@ -63,7 +63,7 @@ $(document).on("pageshow","#uploadpage",function(){
 		$(".img").attr('src','img/img-icon.png');
 		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
-$(document).on("pagecreate","#downloadspage",function(){
+$(document).on("pageshow","#downloadspage",function(){
 	$(".images").hide();
 	$(".vids").hide();
 	$(".pptx").show();
