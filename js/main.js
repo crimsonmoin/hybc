@@ -64,15 +64,12 @@ $(document).on("pageshow","#uploadpage",function(){
 		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
 $(document).on("pageshow","#downloadspage",function(){
-	$(".images").hide();
-	$(".vids").hide();
-	$(".pptx").show();
 	var msg;
 	switch(ty){
 		case 0: msg="Select PPT<br/>to Upload";
 		$(".images").hide();
 		$(".vids").hide();
-		$(".pptx").show();
+		$(".pptx").show("fast");
 		break;
 		case 1: msg="Select Image<br/>to Download";
 		$(".vids").hide();
