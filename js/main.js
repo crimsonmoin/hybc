@@ -97,7 +97,7 @@ $(document).on("pageshow","#downloadspage",function(){
 		$(".pptxx").attr('src','img/ppt-icon.png');
 		$(".videox").attr('src','img/video-icon.png');
 		$(".imgx").attr('src','img/img-icon.png');
-		$('.btmcontainer>.col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
+		$('.btmcontainer .col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
 		ty=parseInt($(this).attr('title'));
 		$(this).children().animate({borderColor:'#ffffff'},300).children().animate({backgroundColor:'#ffffff'}, 200);
 		switch(ty){
