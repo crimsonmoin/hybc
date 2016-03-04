@@ -401,6 +401,7 @@ h1 {
     float: left;
     text-align: center;
 }
+
 .col3 h3{
 	color: white;
     font-size: 26px;
@@ -481,6 +482,41 @@ h1 {
     top: 14px;
     left: 0px;
 }
+.btmcontainer{
+	position: fixed;
+    bottom: 2px;
+    right: 120px;
+}
+#downloadspage .col3{
+	width: 75px;
+    margin: 5px;
+    float: left;
+}
+#downloadspage .inner-two{
+    height: 100%;
+    width: 100%;
+    border: 2px solid white;
+	border-radius: 50%;
+	padding: 5px;
+    box-sizing: border-box;
+	position:relative;
+}
+#downloadspage .inner-two.container {
+  height: 85px;
+    margin: 1%;
+    position: relative;
+	width: 85px;
+	border-color:transparent;
+}
+#downloadspage .inner-two>img {
+       height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 13px;
+    left: 8px;
+    padding: 0px;
+}
+
 .ripplelink{
 	 border: 2px solid #ffffff;
 }
@@ -560,11 +596,7 @@ h1 {
 		width:70%;
 		padding:0 10%;
 	}
-	#downloadspage .col3{margin:0 15px;}
-	#downloadspage .col3 img{
-		padding:10px 20px;
-		width:80%;
-	}
+	
 	#timer3G,#timer4G{
 	font-size:65px;
 	margin-top:90px;

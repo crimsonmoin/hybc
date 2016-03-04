@@ -64,25 +64,55 @@ $(document).on("pageshow","#uploadpage",function(){
 		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
 $(document).on("pageshow","#downloadspage",function(){
+	$(".images").hide();
+	$(".vids").hide();
+	$(".pptx").show();
 	var msg;
-	switch(ty){
-		case 0: msg="Select PPT<br/>to Upload";
-		$(".images").hide();
-		$(".vids").hide();
-		$(".pptx").show("fast");
-		break;
-		case 1: msg="Select Image<br/>to Download";
-		$(".vids").hide();
-		$(".pptx").hide();
-		$(".images").show("fast");
-		break;
-		case 2:msg="Select Video<br/>to Download";
-		$(".images").hide();
-		$(".pptx").hide();
-		$(".vids").show("fast");
-		break;
-	}
-	$(".msg").html(msg);
+	function switcher(){
+		switch(ty){
+			case 0: msg="Select PPT<br/>to Upload";
+			$(".images").hide();
+			$(".vids").hide();
+			$(".pptx").fadeIn("fast");
+			$(".pptxx").attr('src','img/ppth-icon.png');
+			$('.pptxx').parent().animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300);
+			break;
+			case 1: msg="Select Image<br/>to Download";
+			$(".vids").hide();
+			$(".pptx").hide();
+			$(".images").fadeIn("fast");
+			$(".imgx").attr('src','img/imgh-icon.png');
+			$('.imgx').parent().animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300);
+			break;
+			case 2:msg="Select Video<br/>to Download";
+			$(".images").hide();
+			$(".pptx").hide();
+			$(".vids").fadeIn("fast");
+			$(".videox").attr('src','img/videoh-icon.png');
+			$('.videox').parent().animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300);
+			break;
+		}
+		$(".msg").html(msg);
+	};
+	switcher();
+	$('.btmcontainer>.col3 a').click(function(e){
+		e.preventDefault();
+		$(".pptxx").attr('src','img/ppt-icon.png');
+		$(".videox").attr('src','img/video-icon.png');
+		$(".imgx").attr('src','img/img-icon.png');
+		$('.btmcontainer>.col3 a').children().animate({borderColor:'transparent'},300).children().animate({backgroundColor:'transparent'}, 200);
+		ty=parseInt($(this).attr('title'));
+		$(this).children().animate({borderColor:'#ffffff'},300).children().animate({backgroundColor:'#ffffff'}, 200);
+		switch(ty){
+					case 0:$(this).find('img').attr('src','img/ppth-icon.png');
+					break;
+					case 1:$(this).find('img').attr('src','img/imgh-icon.png');
+					break;
+					case 2:$(this).find('img').attr('src','img/videoh-icon.png');
+					break;
+				}
+		switcher();
+	});
   $(".thumper a").click(function(e){
 	  e.preventDefault();
 	  op=parseInt($(this).attr("data-op"));
