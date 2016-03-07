@@ -100,7 +100,7 @@ $(document).on("pageshow","#downloadspage",function(){
 		$(".imgx").attr('src','img/img-icon.png');
 		$('.btmcontainer .col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
 		ty=parseInt($(this).attr('title'));
-		$(this).children().animate({borderColor:'#ffffff'},300).children().animate({backgroundColor:'#ffffff'}, 200);
+		//$(this).children().animate({borderColor:'#ffffff'},300).children().animate({backgroundColor:'#ffffff'}, 200);
 		switch(ty){
 					case 0:$(this).find('img').attr('src','img/ppth-icon.png');
 					break;
