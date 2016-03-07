@@ -51,16 +51,13 @@ $(document).on("pagecreate","#mainpage",function(){
     window.location.href="#cpanelpage";
   });    
 });
-
 $(document).on("pageshow","#cpanelpage",function(){	
-		$('.radar').hide();
 		$(".play").attr('src','img/play-icon.png');
 		$(".upload").attr('src','img/upload-icon.png');
 		$(".youtube").attr('src','img/youtube-icon.png');
 		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
 $(document).on("pageshow","#uploadpage",function(){	
-		$('.radar').hide();
 		$(".ppt").attr('src','img/ppt-icon.png');
 		$(".video").attr('src','img/video-icon.png');
 		$(".img").attr('src','img/img-icon.png');
