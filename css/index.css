@@ -59,7 +59,13 @@ body {
 }
 a{text-decoration:none;}
 .ui-loader-default {
-					opacity: 1 !important;		
+					opacity: 1 !important;	
+min-width:100%;
+min-height:100%;	
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;				
                 }
 .ui-page {
 backface-visibility:hidden;
