@@ -47,10 +47,11 @@ $(document).on("pageshow","#screensaverpage",function(){
 	});*/
 });
 $(document).on("pagecreate","#mainpage",function(){
-	$('.trance').hide();
+	//$('.trance').hide();
 	$("#mainpage").on("click",function(){
-	  $('.trance').show();
-	  setTimeout(function(){ $('.trance').hide();window.location.href="#cpanelpage"; }, 4500);
+	 // $('.trance').show();
+	  $.mobile.loading('show');
+	  setTimeout(function(){  $.mobile.loading('hide');;window.location.href="#cpanelpage"; }, 5000);
    
   });    
 });
