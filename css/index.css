@@ -20,14 +20,7 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 	margin:0;padding:0;
 }
- .ui-loader-default {
-					opacity: 1 !important;		
-                }
-.ui-page {
-backface-visibility:hidden;
--webkit-backface-visibility:hidden; /* Chrome and Safari */
--moz-backface-visibility:hidden; / Firefox */
-}
+ 
 @font-face {
     font-family: 'vodaofoneregular';
     src: url('../img/VODAFONERG_0.TTF');
@@ -65,6 +58,20 @@ body {
     width:100%;
 }
 a{text-decoration:none;}
+.ui-loader-default {
+					opacity: 1 !important;		
+                }
+.ui-page {
+backface-visibility:hidden;
+-webkit-backface-visibility:hidden; /* Chrome and Safari */
+-moz-backface-visibility:hidden; /* Firefox */
+}
+.trance{
+	 -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 video { 
     position: absolute;
     top: 0;
@@ -129,12 +136,7 @@ h1 {
     background-color:#4B946A;
     display:none;
 }
-.trance{
-	 -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 #mainpage{
 	background: white url('../img/1.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
