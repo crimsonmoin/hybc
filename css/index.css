@@ -129,7 +129,12 @@ h1 {
     background-color:#4B946A;
     display:none;
 }
-
+.trance{
+	 -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 #mainpage{
 	background: white url('../img/1.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;

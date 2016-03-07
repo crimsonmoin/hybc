@@ -51,8 +51,7 @@ $(document).on("pagecreate","#mainpage",function(){
 	$("#mainpage").on("click",function(){
 	 // $('.trance').show();
 	  $.mobile.loading('show');
-	  setTimeout(function(){  $.mobile.loading('hide');window.location.href="#cpanelpage"; }, 5000);
-   
+	  setTimeout(function(){  $.mobile.loading('hide');window.location.href="#cpanelpage"; }, 3000);
   });    
 });
 $(document).on("pageshow","#cpanelpage",function(){	
