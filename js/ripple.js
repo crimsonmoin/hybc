@@ -22,7 +22,7 @@
 				$(".video").attr('src','img/video-icon.png');
 				$(".img").attr('src','img/img-icon.png');
 				
-				$(this).animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300).parent().animate({borderColor:'#ffffff'},300).animate({borderColor:'transparent'},300);
+				$(this).animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500).animate({borderColor:'transparent'},500);
 				
 				switch($(this).find('img').attr('title')){
 					case "play":$(this).find('img').attr('src','img/playh-icon.png');

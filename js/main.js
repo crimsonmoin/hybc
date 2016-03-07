@@ -51,7 +51,7 @@ $(document).on("pagecreate","#mainpage",function(){
 	$("#mainpage").on("click",function(){
 	 // $('.trance').show();
 	  $.mobile.loading('show');
-	  setTimeout(function(){  $.mobile.loading('hide');;window.location.href="#cpanelpage"; }, 5000);
+	  setTimeout(function(){  $.mobile.loading('hide');window.location.href="#cpanelpage"; }, 5000);
    
   });    
 });
@@ -80,21 +80,21 @@ $(document).on("pageshow","#downloadspage",function(){
 			$(".vids").hide();
 			$(".pptx").fadeIn("fast");
 			$(".pptxx").attr('src','img/ppth-icon.png');
-			$('.pptxx').parent().animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300);
+			$('.pptxx').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
 			break;
 			case 1: msg="Select Image<br/>to Download";
 			$(".vids").hide();
 			$(".pptx").hide();
 			$(".images").fadeIn("fast");
 			$(".imgx").attr('src','img/imgh-icon.png');
-			$('.imgx').parent().animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300);
+			$('.imgx').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
 			break;
 			case 2:msg="Select Video<br/>to Download";
 			$(".images").hide();
 			$(".pptx").hide();
 			$(".vids").fadeIn("fast");
 			$(".videox").attr('src','img/videoh-icon.png');
-			$('.videox').parent().animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300);
+			$('.videox').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
 			break;
 		}
 		$(".msg").html(msg);
