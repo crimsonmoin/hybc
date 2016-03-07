@@ -1,11 +1,11 @@
 //$(function(){
 				
-				var ink, d, x, y;
+				var ink, d, x, y,ele;
 				$(".ripplelink").click(function(e){
 				if($(this).find(".ink").length === 0){
 					$(this).prepend("<span class='ink'></span>");
 				}
-					 
+				ele=$(this); 
 				ink = $(this).find(".ink");
 				ink.removeClass("animate");
 				 
@@ -26,7 +26,7 @@
 				$(this).animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300).parent().animate({borderColor:'#ffffff'},300).animate({borderColor:'transparent'},300);
 				
 				switch($(this).find('img').attr('title')){
-					case "play":$(this).find('img').attr('src','img/playh-icon.png');
+					case "play":$(this).find('img').attr('src','img/playh-icon.png');window.location.href="#apppage";
 					break;
 					case "upload":$(this).find('img').attr('src','img/uploadh-icon.png');
 					break;
@@ -43,7 +43,11 @@
 				y = e.pageY - $(this).offset().top - ink.height()/2;
 				ink.css({top: y+'px', left: x+'px'}).addClass("animate");
 				 $(this).one("webkitAnimationEnd mozAnimationEnd oanimationend animationend", function() {
-						switch($(this).find('img').attr('title')){
+						$('.radar').show();
+                    });
+				$('.radar').one("webkitAnimationEnd mozAnimationEnd oanimationend animationend", function() {  
+					$('.radar').hide();
+					switch($(ele).find('img').attr('title')){
 							case "play":window.location.href="#apppage";
 							break;
 							case "upload":window.location.href="#uploadpage";
@@ -57,8 +61,6 @@
 							case "video":ty=2;window.location.href="#downloadspage";
 							break;
 						}
-				
-                    });
-
+					});
 				});
 //});
