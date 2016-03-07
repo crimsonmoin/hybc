@@ -13,6 +13,7 @@
 		<script>
 			$(document).bind('mobileinit',function(){
 				$.mobile.pushStateEnabled = false;
+				$.mobile.defaultPageTransition = 'slide';
 			});
 		</script>
 		<!-- Include the jQuery Mobile library -->
@@ -43,6 +44,7 @@
 		</a>
 	</div>
 	<div data-role="page" id="cpanelpage">
+	<img class="trance" src="img/transition.gif" style="display:none;position:fixed;max-width:100%;top:0;left:0;z-index:10000;"/>
 	  <div data-role="main" class="ui-content">
 		<div class="lsidecontainer">
 			<h1>Pick your<br/>choice</h1>

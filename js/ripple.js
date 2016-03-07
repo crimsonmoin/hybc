@@ -13,6 +13,7 @@
 					d = Math.max($(this).outerWidth(), $(this).outerHeight());
 					ink.css({height: d, width: d});
 				}
+				$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);
 				$(".play").attr('src','img/play-icon.png');
 				$(".upload").attr('src','img/upload-icon.png');
 				$(".youtube").attr('src','img/youtube-icon.png');
@@ -20,8 +21,6 @@
 				$(".ppt").attr('src','img/ppt-icon.png');
 				$(".video").attr('src','img/video-icon.png');
 				$(".img").attr('src','img/img-icon.png');
-				
-				$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);
 				
 				$(this).animate({backgroundColor:'#ffffff'}, 200).parent().animate({borderColor:'#ffffff'},300).parent().animate({borderColor:'#ffffff'},300).animate({borderColor:'transparent'},300);
 				

@@ -47,28 +47,31 @@ $(document).on("pageshow","#screensaverpage",function(){
 	});*/
 });
 $(document).on("pagecreate","#mainpage",function(){
-  $("#mainpage").on("click",function(){
-    window.location.href="#cpanelpage";
+	$('.trance').hide();
+	$("#mainpage").on("click",function(){
+	  $('.trance').show();
+	  setTimeout(function(){ $('.trance').hide();window.location.href="#cpanelpage"; }, 3500);
+   
   });    
 });
 $(document).on("pageshow","#cpanelpage",function(){	
+		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 		$(".play").attr('src','img/play-icon.png');
 		$(".upload").attr('src','img/upload-icon.png');
 		$(".youtube").attr('src','img/youtube-icon.png');
-		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
 $(document).on("pageshow","#uploadpage",function(){	
+		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 		$(".ppt").attr('src','img/ppt-icon.png');
 		$(".video").attr('src','img/video-icon.png');
 		$(".img").attr('src','img/img-icon.png');
-		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
 });
 $(document).on("pageshow","#downloadspage",function(){
 	var msg;
+	$('.btmcontainer .col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
 	$(".pptxx").attr('src','img/ppt-icon.png');
 	$(".videox").attr('src','img/video-icon.png');
 	$(".imgx").attr('src','img/img-icon.png');
-	$('.btmcontainer .col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
 	function switcher(){
 		switch(ty){
 			case 0: msg="Select PPT<br/>to Upload";
@@ -98,10 +101,10 @@ $(document).on("pageshow","#downloadspage",function(){
 	switcher();
 	$('.btmcontainer>.col3 a').click(function(e){
 		e.preventDefault();
+		$('.btmcontainer .col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
 		$(".pptxx").attr('src','img/ppt-icon.png');
 		$(".videox").attr('src','img/video-icon.png');
 		$(".imgx").attr('src','img/img-icon.png');
-		$('.btmcontainer .col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
 		ty=parseInt($(this).attr('title'));
 		//$(this).children().animate({borderColor:'#ffffff'},300).children().animate({backgroundColor:'#ffffff'}, 200);
 		/*switch(ty){
