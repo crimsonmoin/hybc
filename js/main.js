@@ -50,7 +50,7 @@ $(document).on("pagecreate","#mainpage",function(){
 	$('.trance').hide();
 	$("#mainpage").on("click",function(){
 	  $('.trance').show();
-	  setTimeout(function(){ $('.trance').hide();window.location.href="#cpanelpage"; }, 3500);
+	  setTimeout(function(){ $('.trance').hide();window.location.href="#cpanelpage"; }, 4500);
    
   });    
 });
