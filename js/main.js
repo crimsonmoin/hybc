@@ -193,6 +193,7 @@ $(document).on("pagecreate","#summarypage",function(){
 	  e.preventDefault();
 	  clearTimeout(myVar);
 	  var res=false; 
+		alert(dev1);alert(dev2);
 	  if(dev1==0||dev2==0){
 	  res=confirm('Do you want to abort the operation ?');
 	  }
