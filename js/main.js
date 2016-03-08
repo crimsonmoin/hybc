@@ -271,15 +271,15 @@ $(document).on("pageshow","#summarypage",function(){
                  longpollerWorker.onerror = workerErrorReceiver;    
                  function workerResultReceiver(e) {
                      var data=JSON.parse(e.data);
+					 dev2=data.device2;
+					 dev1=data.device1;
 						if(data.device2==1){
-							dev2=1;
 							$('#timer4G').timer('pause'); 
 							$("#timer4G").prev('span').fadeIn(500);
 							$('#timer4G').css("color","#e90000");
 							$("#timer4G").prev('span').parent().css("background-color","white");
 							}
 						if(data.device1==1){
-							dev1=1;
 							$('#timer3G').timer('pause');
 							$("#timer3G").prev('span').fadeIn(500);
 							$('#timer3G').css("color","#e90000");
