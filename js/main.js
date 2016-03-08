@@ -122,7 +122,7 @@ $.mobile.loading('hide');
 			});	
 		});
 });
-$(document).on("pageshow","#downloadspage",function(){
+$(document).on("pagecreate","#downloadspage",function(){
 	$.mobile.loading('hide');
 	function neutrr(){
 			$(".icooo").parent().css("background-color", "transparent").css("border-color", "white").parent().css("border-color", "transparent");	    
