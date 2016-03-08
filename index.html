@@ -13,7 +13,7 @@
 		<script>
 			$(document).bind('mobileinit',function(){
 				$.mobile.pushStateEnabled = false;
-				$.mobile.defaultPageTransition = 'none';
+				$.mobile.defaultPageTransition = 'slide';
 				$.mobile.loader.prototype.options.text = "loading";
               $.mobile.loader.prototype.options.textVisible = false;
               $.mobile.loader.prototype.options.theme = "a";
@@ -257,7 +257,7 @@
 			</div>
 			<div class="clear:both"></div>
 			<p class="btmsg">Enjoy buffer-free streaming</p>
-			<a href="#cpanelpage" class="back"><img src="img/back-button.png"/></a>
+			<a data-rel="back" class="back"><img src="img/back-button.png"/></a>
 			</div>
 		</div>	
 	</div> 
