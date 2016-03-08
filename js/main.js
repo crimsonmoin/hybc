@@ -5,6 +5,9 @@ var operation="";
 var id=0;
 var ty=0;
 var giffer=2000;
+var dev1,dev2;
+dev1=dev2=0;
+var myVar;	
 var MasterData=[
 {'type':'PPT','size':'4mb','op':'upload'},
 {'type':'PPT','size':'2mb','op':'upload'},
@@ -184,6 +187,59 @@ $(document).on("pagecreate","#apppage",function(){
 	setTimeout(function(){  $.mobile.loading('hide');window.location.href="#summarypage"; }, giffer);	
 	});
 });
+$(document).on("pagecreate","#summarypage",function(){
+	$('.summaryback').on('click',function(e){
+	//back button aborter
+	  e.preventDefault();
+	  clearTimeout(myVar);
+	  var res=false; 
+	  if(dev1==0||dev2==0){
+	  res=confirm('Do you want to abort the operation ?');
+	  }
+	  else{
+		  window.location.href="#cpanelpage";
+	  }
+	  // operation abortion code included here
+	  if(res===true){
+		if (typeof (Worker) !== "undefined") {
+				if(typeof(abortWorker)=="undefined"){
+                 //Creating Worker Object
+                 abortWorker = new Worker("js/abort.js");
+                 //Call Back Function for Success
+                 abortWorker.onmessage = workerResultReceiver1;
+				 // send message to web worker
+                 //Call Back function if some error occurred
+                 abortWorker.onerror = workerErrorReceiver1;    
+                 function workerResultReceiver1(e) {
+					if(e.data==id){
+						console.log(e.data);
+						console.log(abortWorker);
+							if(typeof(abortWorker)!="undefined"){
+							abortWorker.terminate();
+							abortWorker=undefined;
+						}
+						$('#timer4G').timer('pause');
+						$('#timer3G').timer('pause');
+							if(typeof(longpollerWorker)!=="undefined"){
+								longpollerWorker.terminate();
+								longpollerWorker=undefined;
+							}
+							
+							window.location.href="#cpanelpage";
+					}
+                 }
+				 abortWorker.postMessage(id);
+                 function workerErrorReceiver1(e) {
+                     console.log("there was a problem with the WebWorker within " + e);
+                 }
+				}
+			}
+              else {
+                  alert("Sorry!!! could not connect");
+              }
+		}
+	});
+});
 $(document).on("pageshow","#summarypage",function(){
 	$("#timer3G").timer();
 	$("#timer4G").timer();
@@ -195,8 +251,7 @@ $(document).on("pageshow","#summarypage",function(){
 	$("#timer3G").prev('span').parent().css("background-color","transparent");
 	$('#timer4G').css("color","white");
 	$("#timer4G").prev('span').parent().css("background-color","transparent");
-	var dev1,dev2;
-	dev1=dev2=0;
+	
 	if(typeof(longpollerWorker)!="undefined"){
 		longpollerWorker.terminate();
 		longpollerWorker=undefined;
@@ -205,55 +260,7 @@ $(document).on("pageshow","#summarypage",function(){
 		abortWorker.terminate();
 		abortWorker=undefined;
 	}
-	var myVar;
-	$(".summaryback").on("click",function(e){
-	//back button aborter
-	  e.preventDefault();
-	  clearTimeout(myVar);
-	  
-	  var res=false;
-	  if(dev1==0||dev2==0){
-	  res=confirm('Do you want to abort the operation ?');
-	  }
-	  else{
-		  window.location.href="#cpanelpage";
-	  }
-	  // operation abortion code included here
-	  if(res){
-		if (typeof (Worker) !== "undefined") {
-                 //Creating Worker Object
-                 abortWorker = new Worker("js/abort.js");
-                 //Call Back Function for Success
-                 abortWorker.onmessage = workerResultReceiver1;
-				 // send message to web worker
-                 //Call Back function if some error occurred
-                 abortWorker.onerror = workerErrorReceiver1;    
-                 function workerResultReceiver1(e) {
-                   
-					if(e.data==id){
-						$('#timer4G').timer('pause');
-						$('#timer3G').timer('pause');
-							if(typeof(longpollerWorker)!="undefined"){
-								longpollerWorker.terminate();
-								longpollerWorker=undefined;
-							}
-							if(typeof(abortWorker)!="undefined"){
-								abortWorker.terminate();
-								abortWorker=undefined;
-							}
-							window.location.href="#cpanelpage";
-					}
-                 }
-				 abortWorker.postMessage(id);
-                 function workerErrorReceiver1(e) {
-                     console.log("there was a problem with the WebWorker within " + e);
-                 }
-              }
-              else {
-                  alert("Sorry!!! could not connect");
-              }
-		}
-	});
+	
 	function longPoller(){
 		if (typeof (Worker) !== "undefined") {
                  //Creating Worker Object
@@ -268,14 +275,14 @@ $(document).on("pageshow","#summarypage",function(){
 						if(data.device2==1){
 							dev2=1;
 							$('#timer4G').timer('pause'); 
-							$("#timer4G").prev('span').fadeIn(500);
+							$("#timer4G").prev('span').show(500);
 							$('#timer4G').css("color","#e90000");
 							$("#timer4G").prev('span').parent().css("background-color","white");
 							}
 						if(data.device1==1){
 							dev1=1;
 							$('#timer3G').timer('pause');
-							$("#timer3G").prev('span').fadeIn(500);
+							$("#timer3G").prev('span').show(500);
 							$('#timer3G').css("color","#e90000");
 							$("#timer3G").prev('span').parent().css("background-color","white");
 						}
@@ -296,11 +303,11 @@ $(document).on("pageshow","#summarypage",function(){
               }
 	};
 	function clearTimers(){
-		/*if(navigator.connection.type==0||navigator.connection.type=='none')
+		if(navigator.connection.type==0||navigator.connection.type=='none')
 		{
 			alert('No internet connection detected');
 		}
-		else*/
+		else
 		{
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
