@@ -4,6 +4,7 @@ var longpollerWorker;
 var operation="";
 var id=0;
 var ty=0;
+var giffer=2000;
 var MasterData=[
 {'type':'PPT','size':'4mb','op':'upload'},
 {'type':'PPT','size':'2mb','op':'upload'},
@@ -47,51 +48,103 @@ $(document).on("pageshow","#screensaverpage",function(){
 	});*/
 });
 $(document).on("pagecreate","#mainpage",function(){
-	//$('.trance').hide();
 	$("#mainpage").on("click",function(){
-	 // $('.trance').show();
 	  $.mobile.loading('show');
-	  setTimeout(function(){  $.mobile.loading('hide');window.location.href="#cpanelpage"; }, 2500);
+	  setTimeout(function(){  $.mobile.loading('hide');window.location.href="#cpanelpage"; }, giffer);
   });    
 });
 $(document).on("pageshow","#cpanelpage",function(){	
-		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
+		$(".ico").parent().css("background-color", "transparent").parent().css("border-color", "white").parent().css("border-color", "transparent");	    
 		$(".play").attr('src','img/play-icon.png');
 		$(".upload").attr('src','img/upload-icon.png');
-		$(".youtube").attr('src','img/youtube-icon.png');
-		
+		$(".youtube").attr('src','img/youtube-icon.png');		
+		$('.play').click(function(){
+			$(this).attr('src','img/playh-icon.png');
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+				$.mobile.loading('show');
+				setTimeout(function(){  $.mobile.loading('hide');window.location.href="#apppage"; }, giffer);	
+			});
+		});
+		$('.upload').click(function(){
+			$(this).attr('src','img/uploadh-icon.png');
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+				$.mobile.loading('show');
+				setTimeout(function(){  $.mobile.loading('hide');window.location.href="#uploadpage"; }, giffer);		
+			});
+		});
+		$('.youtube').click(function(){
+			$(this).attr('src','img/youtubeh-icon.png');
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+				$.mobile.loading('show');
+				setTimeout(function(){  $.mobile.loading('hide');window.location.href="#youtubepage"; }, giffer);	
+			});
+		});
 });
 $(document).on("pageshow","#uploadpage",function(){	
-		$(".ripplelink").animate({backgroundColor:'transparent'}, 100).parent().animate({borderColor:'transparent'},100).parent().animate({borderColor:'transparent'},100).animate({borderColor:'transparent'},100);		    
-		$(".ppt").attr('src','img/ppt-icon.png');
-		$(".video").attr('src','img/video-icon.png');
-		$(".img").attr('src','img/img-icon.png');
+		function neutr(){
+			$(".icoo").parent().css("background-color", "transparent").parent().css("border-color", "white").parent().css("border-color", "transparent");	    
+			$(".ppt").attr('src','img/ppt-icon.png');
+			$(".video").attr('src','img/video-icon.png');
+			$(".img").attr('src','img/img-icon.png');
+		};
+		neutr();
+		$('.ppt').click(function(){
+			neutr();
+			$(this).attr('src','img/ppth-icon.png');
+			ty=0;
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$.mobile.loading('show');
+			setTimeout(function(){  $.mobile.loading('hide');window.location.href="#downloadspage"; }, giffer);	
+			});		
+		});
+		$('.video').click(function(){
+			neutr();
+			$(this).attr('src','img/videoh-icon.png');
+			ty=2;
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$.mobile.loading('show');
+			setTimeout(function(){  $.mobile.loading('hide');window.location.href="#downloadspage"; }, giffer);	
+			});	
+		});
+		$('.img').click(function(){
+			neutr();
+			$(this).attr('src','img/imgh-icon.png');
+			ty=1;
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$.mobile.loading('show');
+			setTimeout(function(){  $.mobile.loading('hide');window.location.href="#downloadspage"; }, giffer);	
+			});	
+		});
 });
 $(document).on("pageshow","#downloadspage",function(){
-	var msg;
-	$('.btmcontainer .col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
-	$(".pptxx").attr('src','img/ppt-icon.png');
-	$(".videox").attr('src','img/video-icon.png');
-	$(".imgx").attr('src','img/img-icon.png');
-	function switcher(){
-		switch(ty){
-			case 0: msg="Select PPT<br/>to Upload";
+	function neutrr(){
+			$(".icooo").parent().css("background-color", "transparent").css("border-color", "white").parent().css("border-color", "transparent");	    
+			$(".pptxx").attr('src','img/ppt-icon.png');
+			$(".videox").attr('src','img/video-icon.png');
+			$(".imgx").attr('src','img/img-icon.png');
 			$(".images").hide();
 			$(".vids").hide();
-			$(".pptx").fadeIn("fast");
+			$(".pptx").hide();
+		};
+	neutrr();
+	var msg;
+	function switcher(){
+		switch(ty){
+			case 0: 
+			neutrr();
+			msg="Select PPT<br/>to Upload";
 			$(".pptxx").attr('src','img/ppth-icon.png');
+			$(".pptx").fadeIn("fast");
 			$('.pptxx').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
 			break;
 			case 1: msg="Select Image<br/>to Download";
-			$(".vids").hide();
-			$(".pptx").hide();
+			neutrr();
 			$(".images").fadeIn("fast");
 			$(".imgx").attr('src','img/imgh-icon.png');
 			$('.imgx').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
 			break;
 			case 2:msg="Select Video<br/>to Download";
-			$(".images").hide();
-			$(".pptx").hide();
+			neutrr();
 			$(".vids").fadeIn("fast");
 			$(".videox").attr('src','img/videoh-icon.png');
 			$('.videox').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
@@ -102,27 +155,15 @@ $(document).on("pageshow","#downloadspage",function(){
 	switcher();
 	$('.btmcontainer>.col3 a').click(function(e){
 		e.preventDefault();
-		$('.btmcontainer .col3 a').children().animate({borderColor:'transparent'},100).children().animate({backgroundColor:'transparent'}, 100);
-		$(".pptxx").attr('src','img/ppt-icon.png');
-		$(".videox").attr('src','img/video-icon.png');
-		$(".imgx").attr('src','img/img-icon.png');
 		ty=parseInt($(this).attr('title'));
-		//$(this).children().animate({borderColor:'#ffffff'},300).children().animate({backgroundColor:'#ffffff'}, 200);
-		/*switch(ty){
-					case 0:$(this).find('img').attr('src','img/ppth-icon.png');
-					break;
-					case 1:$(this).find('img').attr('src','img/imgh-icon.png');
-					break;
-					case 2:$(this).find('img').attr('src','img/videoh-icon.png');
-					break;
-				}*/
 		switcher();
 	});
   $(".thumper a").click(function(e){
 	  e.preventDefault();
 	  op=parseInt($(this).attr("data-op"));
 	  operation=$(this).attr("title");
-	  window.location.href="#summarypage"; 
+	  $.mobile.loading('show');
+		setTimeout(function(){  $.mobile.loading('hide');window.location.href="#summarypage"; }, giffer);	
 	});
 });
 $(document).on("pagecreate","#youtubepage",function(){
@@ -130,7 +171,8 @@ $(document).on("pagecreate","#youtubepage",function(){
 		e.preventDefault();
 	  op=parseInt($(this).attr("data-op"));
 	  operation=$(this).attr("title");
-	  window.location.href="#summarypage"; 
+	  $.mobile.loading('show');
+		setTimeout(function(){  $.mobile.loading('hide');window.location.href="#summarypage"; }, giffer);	
 	});
 });
 $(document).on("pagecreate","#apppage",function(){
@@ -138,7 +180,8 @@ $(document).on("pagecreate","#apppage",function(){
 	  e.preventDefault();
 	  op=parseInt($(this).attr("data-op"));
 	  operation=$(this).attr("title");
-	  window.location.href="#summarypage"; 
+	   $.mobile.loading('show');
+	setTimeout(function(){  $.mobile.loading('hide');window.location.href="#summarypage"; }, giffer);	
 	});
 });
 $(document).on("pageshow","#summarypage",function(){
