@@ -151,20 +151,20 @@ var msg;
 	function switcher(){
 		switch(ty){
 			case 0: 
-			neutrr();
+			
 			msg="Select PPT<br/>to Upload";
 			$(".pptxx").attr('src','img/ppth-icon.png');
 			$(".pptx").fadeIn("fast");
 			$('.pptxx').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
 			break;
 			case 1: msg="Select Image<br/>to Download";
-			neutrr();
+			
 			$(".images").fadeIn("fast");
 			$(".imgx").attr('src','img/imgh-icon.png');
 			$('.imgx').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
 			break;
 			case 2:msg="Select Video<br/>to Download";
-			neutrr();
+			
 			$(".vids").fadeIn("fast");
 			$(".videox").attr('src','img/videoh-icon.png');
 			$('.videox').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
