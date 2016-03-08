@@ -57,7 +57,7 @@ $(document).on("pagecreate","#mainpage",function(){
 	  setTimeout(function(){  $.mobile.loading('hide');window.location.href="#cpanelpage"; }, giffer);
   });    
 });
-$(document).on("pagebeforehide","#cpanelpage",function(){
+$(document).on("pagehide","#cpanelpage",function(){
 	$.mobile.loading('hide');
 		$(".ico").parent().css("background-color", "transparent").parent().css("border-color", "white").parent().css("border-color", "transparent");	    
 		$(".play").attr('src','img/play-icon.png');
@@ -92,7 +92,7 @@ $.mobile.loading('hide');
 			});
 		});
 });
-$(document).on("pagebeforehide","#uploadpage",function(){	
+$(document).on("pagehide","#uploadpage",function(){	
 $.mobile.loading('hide');
 $(".icoo").parent().css("background-color", "transparent").parent().css("border-color", "white").parent().css("border-color", "transparent");	    
 			$(".ppt").attr('src','img/ppt-icon.png');
@@ -136,7 +136,7 @@ $.mobile.loading('hide');
 			});	
 		});
 });
-$(document).on("pagebeforehide","#downloadspage",function(){
+$(document).on("pagehide","#downloadspage",function(){
 	$.mobile.loading('hide');
 	$(".icooo").parent().css("background-color", "transparent").css("border-color", "white").parent().css("border-color", "transparent");	    
 			$(".pptxx").attr('src','img/ppt-icon.png');
@@ -146,19 +146,8 @@ $(document).on("pagebeforehide","#downloadspage",function(){
 			$(".vids").hide();
 			$(".pptx").hide();
 });
-$(document).on("pagecreate","#downloadspage",function(){
-	$.mobile.loading('hide');
-	function neutrr(){
-			$(".icooo").parent().css("background-color", "transparent").css("border-color", "white").parent().css("border-color", "transparent");	    
-			$(".pptxx").attr('src','img/ppt-icon.png');
-			$(".videox").attr('src','img/video-icon.png');
-			$(".imgx").attr('src','img/img-icon.png');
-			$(".images").hide();
-			$(".vids").hide();
-			$(".pptx").hide();
-		};
-	neutrr();
-	var msg;
+$(document).on("pageshow","#downloadspage",function(){
+var msg;
 	function switcher(){
 		switch(ty){
 			case 0: 
@@ -184,6 +173,45 @@ $(document).on("pagecreate","#downloadspage",function(){
 		$(".msg").html(msg);
 	};
 	switcher();
+});
+$(document).on("pagecreate","#downloadspage",function(){
+	$.mobile.loading('hide');
+	function neutrr(){
+			$(".icooo").parent().css("background-color", "transparent").css("border-color", "white").parent().css("border-color", "transparent");	    
+			$(".pptxx").attr('src','img/ppt-icon.png');
+			$(".videox").attr('src','img/video-icon.png');
+			$(".imgx").attr('src','img/img-icon.png');
+			$(".images").hide();
+			$(".vids").hide();
+			$(".pptx").hide();
+		};
+	neutrr();
+	/*var msg;
+	function switcher(){
+		switch(ty){
+			case 0: 
+			neutrr();
+			msg="Select PPT<br/>to Upload";
+			$(".pptxx").attr('src','img/ppth-icon.png');
+			$(".pptx").fadeIn("fast");
+			$('.pptxx').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
+			break;
+			case 1: msg="Select Image<br/>to Download";
+			neutrr();
+			$(".images").fadeIn("fast");
+			$(".imgx").attr('src','img/imgh-icon.png');
+			$('.imgx').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
+			break;
+			case 2:msg="Select Video<br/>to Download";
+			neutrr();
+			$(".vids").fadeIn("fast");
+			$(".videox").attr('src','img/videoh-icon.png');
+			$('.videox').parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500);
+			break;
+		}
+		$(".msg").html(msg);
+	};
+	switcher();*/
 	$('.btmcontainer>.col3 a').click(function(e){
 		e.preventDefault();
 		ty=parseInt($(this).attr('title'));
