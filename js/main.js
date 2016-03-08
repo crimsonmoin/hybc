@@ -4,7 +4,7 @@ var longpollerWorker;
 var operation="";
 var id=0;
 var ty=0;
-var giffer=1100;
+var giffer=1200;
 var dev1,dev2;
 dev1=dev2=0;
 var myVar;	
@@ -186,7 +186,7 @@ $(document).on("pagecreate","#downloadspage",function(){
 			$(".pptx").hide();
 		};
 	neutrr();
-	/*var msg;
+	var msg;
 	function switcher(){
 		switch(ty){
 			case 0: 
@@ -211,7 +211,7 @@ $(document).on("pagecreate","#downloadspage",function(){
 		}
 		$(".msg").html(msg);
 	};
-	switcher();*/
+	switcher();
 	$('.btmcontainer>.col3 a').click(function(e){
 		e.preventDefault();
 		ty=parseInt($(this).attr('title'));
