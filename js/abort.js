@@ -12,4 +12,4 @@ function abortOperation() {
   xhttp.open("GET", "http://api2.valleyretail.in/rest/api.php?request=abortOp&id="+d, true);
   xhttp.send();
 };
-setInterval(function(){ abortOperation(); }, 1000);
+abortOperation();
