@@ -51,12 +51,14 @@ $(document).on("pageshow","#screensaverpage",function(){
 	});*/
 });
 $(document).on("pagecreate","#mainpage",function(){
+	$.mobile.loading('hide');
 	$("#mainpage").on("click",function(){
 	  $.mobile.loading('show');
 	  setTimeout(function(){  $.mobile.loading('hide');window.location.href="#cpanelpage"; }, giffer);
   });    
 });
 $(document).on("pageshow","#cpanelpage",function(){	
+$.mobile.loading('hide');
 		$(".ico").parent().css("background-color", "transparent").parent().css("border-color", "white").parent().css("border-color", "transparent");	    
 		$(".play").attr('src','img/play-icon.png');
 		$(".upload").attr('src','img/upload-icon.png');
@@ -84,6 +86,7 @@ $(document).on("pageshow","#cpanelpage",function(){
 		});
 });
 $(document).on("pageshow","#uploadpage",function(){	
+$.mobile.loading('hide');
 		function neutr(){
 			$(".icoo").parent().css("background-color", "transparent").parent().css("border-color", "white").parent().css("border-color", "transparent");	    
 			$(".ppt").attr('src','img/ppt-icon.png');
@@ -120,6 +123,7 @@ $(document).on("pageshow","#uploadpage",function(){
 		});
 });
 $(document).on("pageshow","#downloadspage",function(){
+	$.mobile.loading('hide');
 	function neutrr(){
 			$(".icooo").parent().css("background-color", "transparent").css("border-color", "white").parent().css("border-color", "transparent");	    
 			$(".pptxx").attr('src','img/ppt-icon.png');
@@ -170,6 +174,7 @@ $(document).on("pageshow","#downloadspage",function(){
 	});
 });
 $(document).on("pagecreate","#youtubepage",function(){
+	$.mobile.loading('hide');
 	$(".thumper a").click(function(e){
 		e.preventDefault();
 	  op=parseInt($(this).attr("data-op"));
@@ -179,6 +184,7 @@ $(document).on("pagecreate","#youtubepage",function(){
 	});
 });
 $(document).on("pagecreate","#apppage",function(){
+	$.mobile.loading('hide');
 	$(".appdetail a").click(function(e){
 	  e.preventDefault();
 	  op=parseInt($(this).attr("data-op"));
