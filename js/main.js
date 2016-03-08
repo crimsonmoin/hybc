@@ -275,14 +275,14 @@ $(document).on("pageshow","#summarypage",function(){
 						if(data.device2==1){
 							dev2=1;
 							$('#timer4G').timer('pause'); 
-							$("#timer4G").prev('span').show(500);
+							$("#timer4G").prev('span').fadeIn(500);
 							$('#timer4G').css("color","#e90000");
 							$("#timer4G").prev('span').parent().css("background-color","white");
 							}
 						if(data.device1==1){
 							dev1=1;
 							$('#timer3G').timer('pause');
-							$("#timer3G").prev('span').show(500);
+							$("#timer3G").prev('span').fadeIn(500);
 							$('#timer3G').css("color","#e90000");
 							$("#timer3G").prev('span').parent().css("background-color","white");
 						}
