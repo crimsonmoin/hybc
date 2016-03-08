@@ -210,9 +210,8 @@ $(document).on("pagecreate","#summarypage",function(){
 				 // send message to web worker
                  //Call Back function if some error occurred
                  abortWorker.onerror = workerErrorReceiver1;    
-                 function workerResultReceiver1(e) {alert(e.data);
+                 function workerResultReceiver1(e) {
 					if(e.data==id){
-						
 							if(typeof(abortWorker)!="undefined"){
 							abortWorker.terminate();
 							abortWorker=undefined;
