@@ -59,7 +59,7 @@ body {
 }
 a{text-decoration:none;}
 .ui-loader-default {
-					opacity: 0.8 !important;	
+					opacity: 1 !important;	
 min-width:100%;
 min-height:100%;	
  -webkit-background-size: cover;

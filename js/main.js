@@ -4,7 +4,7 @@ var longpollerWorker;
 var operation="";
 var id=0;
 var ty=0;
-var giffer=2000;
+var giffer=1000;
 var dev1,dev2;
 dev1=dev2=0;
 var myVar;	
@@ -275,13 +275,13 @@ $(document).on("pageshow","#summarypage",function(){
 					 dev1=data.device1;
 						if(data.device2==1){
 							$('#timer4G').timer('pause'); 
-							$("#timer4G").prev('span').fadeIn(500);
+							$("#timer4G").prev('span').show("fast");
 							$('#timer4G').css("color","#e90000");
 							$("#timer4G").prev('span').parent().css("background-color","white");
 							}
 						if(data.device1==1){
 							$('#timer3G').timer('pause');
-							$("#timer3G").prev('span').fadeIn(500);
+							$("#timer3G").prev('span').show("fast");
 							$('#timer3G').css("color","#e90000");
 							$("#timer3G").prev('span').parent().css("background-color","white");
 						}
