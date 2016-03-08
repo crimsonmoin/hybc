@@ -57,7 +57,7 @@ $(document).on("pagecreate","#mainpage",function(){
 	  setTimeout(function(){  $.mobile.loading('hide');window.location.href="#cpanelpage"; }, giffer);
   });    
 });
-$(document).on("pagehide","#cpanelpage",function(){
+$(document).on("pagebeforehide","#cpanelpage",function(){
 	$.mobile.loading('hide');
 		$(".ico").parent().css("background-color", "transparent").parent().css("border-color", "white").parent().css("border-color", "transparent");	    
 		$(".play").attr('src','img/play-icon.png');
@@ -92,7 +92,7 @@ $.mobile.loading('hide');
 			});
 		});
 });
-$(document).on("pagehide","#uploadpage",function(){	
+$(document).on("pagebeforehide","#uploadpage",function(){	
 $.mobile.loading('hide');
 $(".icoo").parent().css("background-color", "transparent").parent().css("border-color", "white").parent().css("border-color", "transparent");	    
 			$(".ppt").attr('src','img/ppt-icon.png');
@@ -136,7 +136,7 @@ $.mobile.loading('hide');
 			});	
 		});
 });
-$(document).on("pagehide","#downloadspage",function(){
+$(document).on("pagebeforehide","#downloadspage",function(){
 	$.mobile.loading('hide');
 	$(".icooo").parent().css("background-color", "transparent").css("border-color", "white").parent().css("border-color", "transparent");	    
 			$(".pptxx").attr('src','img/ppt-icon.png');
