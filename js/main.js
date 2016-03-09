@@ -4,7 +4,7 @@ var longpollerWorker;
 var operation="";
 var id=0;
 var ty=0;
-var giffer=1100;
+var giffer=1800;
 var dev1,dev2;
 dev1=dev2=0;
 var myVar;	
