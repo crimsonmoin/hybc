@@ -72,21 +72,21 @@ $.mobile.loading('hide');
 		$(".youtube").attr('src','img/youtube-icon.png');		
 		$('.play').click(function(){
 			$(this).attr('src','img/playh-icon.png');
-			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'},300).animate({backgroundColor:'transparent'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'}, 300).animate({backgroundColor:'transparent'},500,function(){
 				$.mobile.loading('show');
 				setTimeout(function(){  $.mobile.loading('hide');window.location.href="#apppage"; }, giffer);	
 			});
 		});
 		$('.upload').click(function(){
 			$(this).attr('src','img/uploadh-icon.png');
-			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'},300).animate({backgroundColor:'transparent'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'}, 300).animate({backgroundColor:'transparent'},500,function(){
 				$.mobile.loading('show');
 				setTimeout(function(){  $.mobile.loading('hide');window.location.href="#uploadpage"; }, giffer);		
 			});
 		});
 		$('.youtube').click(function(){
 			$(this).attr('src','img/youtubeh-icon.png');
-			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'},300).animate({backgroundColor:'transparent'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'}, 300).animate({backgroundColor:'transparent'},500,function(){
 				$.mobile.loading('show');
 				setTimeout(function(){  $.mobile.loading('hide');window.location.href="#youtubepage"; }, giffer);	
 			});
@@ -112,7 +112,7 @@ $.mobile.loading('hide');
 			neutr();
 			$(this).attr('src','img/ppth-icon.png');
 			ty=0;
-			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'},300).animate({backgroundColor:'transparent'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'}, 300).animate({backgroundColor:'transparent'},500,function(){
 			$.mobile.loading('show');
 			setTimeout(function(){  $.mobile.loading('hide');window.location.href="#downloadspage"; }, giffer);	
 			});		
@@ -121,7 +121,7 @@ $.mobile.loading('hide');
 			neutr();
 			$(this).attr('src','img/videoh-icon.png');
 			ty=2;
-			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'},300).animate({backgroundColor:'transparent'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'}, 300).animate({backgroundColor:'transparent'},500,function(){
 			$.mobile.loading('show');
 			setTimeout(function(){  $.mobile.loading('hide');window.location.href="#downloadspage"; }, giffer);	
 			});	
@@ -130,7 +130,7 @@ $.mobile.loading('hide');
 			neutr();
 			$(this).attr('src','img/imgh-icon.png');
 			ty=1;
-			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({borderColor:'#ffffff'},500).parent().animate({borderColor:'#ffffff'},500,function(){
+			$(this).parent().animate({backgroundColor:'#ffffff'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'},300).animate({backgroundColor:'transparent'}, 500).parent().animate({backgroundColor:'#ffffff'}, 500).animate({borderColor:'#ffffff'}, 300).animate({backgroundColor:'transparent'},500,function(){
 			$.mobile.loading('show');
 			setTimeout(function(){  $.mobile.loading('hide');window.location.href="#downloadspage"; }, giffer);	
 			});	
@@ -339,9 +339,9 @@ $(document).on("pageshow","#summarypage",function(){
 							}
 						if(data.device1==1){
 							$('#timer3G').timer('pause');
-							$("#timer3G").prev('span').show("fast");
+							/*$("#timer3G").prev('span').show("fast");
 							$('#timer3G').css("color","#e90000");
-							$("#timer3G").prev('span').parent().css("background-color","white");
+							$("#timer3G").prev('span').parent().css("background-color","white");*/
 						}
 						if(data.device1==1&&data.device2==1){							
 							longpollerWorker.terminate();
