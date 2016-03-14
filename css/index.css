@@ -699,10 +699,13 @@ h1 {
 		margin-top:0px;
 	}
 	#summarypage .lsidecontainer h1{
-		margin-left:10%;
+		margin-left:5%;
 		margin-top: 90%;
 	}
-	#cpanelpage .lsidecontainer h1{
+	#cpanelpage .lsidecontainer h1,#youtubepage .lsidecontainer h1,#downloadspage .lsidecontainer h1{
+		margin-top:110%;
+	}
+	#apppage .lsidecontainer h1{
 		margin-top:100%;
 	}
 }

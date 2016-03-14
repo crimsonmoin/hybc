@@ -19,8 +19,8 @@ var MasterData=[
 {'type':'App','size':'26mb','op':'download'},
 {'type':'App','size':'11mb','op':'download'},
 {'type':'App','size':'7mb','op':'download'},
-{'type':'YouTube','size':'-mb','op':'streaming'},
-{'type':'YouTube','size':'-mb','op':'streaming'},
+{'type':'YouTube','size':'100mb','op':'streaming'},
+{'type':'YouTube','size':'100mb','op':'streaming'},
 ];
 var op=0;
 $(document).on("pagecreate","#connectpage",function(){
