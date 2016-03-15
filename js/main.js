@@ -1,4 +1,4 @@
-var uri="http://api2.valleyretail.in/rest/api.php?request=";
+var uri="http://api1.valleyretail.in/rest/api.php?request=";
 var abortWorker;
 var longpollerWorker;
 var operation="";
